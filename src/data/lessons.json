@@ -1,0 +1,17 @@
+{
+  "python": [
+    "List comprehensions are a concise way to create lists in one line.",
+    "Use `enumerate()` when you need both index and value in a loop.",
+    "Functions are first-class objects — you can pass them as arguments."
+  ],
+  "javascript": [
+    "Arrow functions don't bind their own `this`.",
+    "Use `map`, `filter`, and `reduce` for clean array transformations.",
+    "Avoid `var`, use `let` and `const` for better scoping."
+  ],
+  "ai": [
+    "Neural networks learn patterns by adjusting weights through backpropagation.",
+    "Data quality is more important than model complexity.",
+    "Use embeddings to represent text numerically for ML tasks."
+  ]
+}
