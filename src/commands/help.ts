@@ -12,9 +12,10 @@ export async function execute(interaction: any) {
       "/learn <topic>      → Learn about a topic",
       "/teach <topic> <content> → Teach SkillBot new info",
       "/topics            → View all topics I know",
+      "/profile           → View your XP and streak",
       "/help              → Show this help menu",
       "--------------------------------",
-      "SkillBot is here to learn *with you!*"
+      "Earn XP by learning and teaching — grow your knowledge!"
     ].join("\n")
   );
 }

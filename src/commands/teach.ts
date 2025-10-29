@@ -1,5 +1,6 @@
 import { SlashCommandBuilder } from "discord.js";
 import { readLessons, writeLessons } from "../utils/fileHandler.js";
+import { addXP } from "../utils/pointsManager.js";
 
 export const data = new SlashCommandBuilder()
   .setName("teach")
@@ -21,7 +22,9 @@ export async function execute(interaction: any) {
   lessons[topic].push(content);
   await writeLessons(lessons);
 
+  await addXP(interaction.user.id, 20);
+
   await interaction.reply(
-    `Thank you! I’ve learned something new about "${topic}".`
+    `You taught me something new about "${topic}". +20 XP for contributing knowledge.`
   );
 }
