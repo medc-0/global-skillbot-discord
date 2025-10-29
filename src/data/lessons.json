@@ -1,13 +1,13 @@
 {
   "python": [
-    "List comprehensions are a concise way to create lists in one line.",
-    "Use `enumerate()` when you need both index and value in a loop.",
-    "Functions are first-class objects — you can pass them as arguments."
+    "Use list comprehensions for concise loops.",
+    "Remember to use virtual environments to isolate dependencies.",
+    "Use f-strings for better string formatting."
   ],
   "javascript": [
-    "Arrow functions don't bind their own `this`.",
-    "Use `map`, `filter`, and `reduce` for clean array transformations.",
-    "Avoid `var`, use `let` and `const` for better scoping."
+    "Use const and let instead of var.",
+    "Async/await is cleaner than promises.",
+    "Avoid callback hell by modularizing async functions."
   ],
   "ai": [
     "Neural networks learn patterns by adjusting weights through backpropagation.",
