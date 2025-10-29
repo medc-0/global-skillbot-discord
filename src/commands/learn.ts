@@ -1,5 +1,6 @@
 import { SlashCommandBuilder } from "discord.js";
 import { readLessons } from "../utils/fileHandler.js";
+import { addXP } from "../utils/pointsManager.js";
 
 export const data = new SlashCommandBuilder()
   .setName("learn")
@@ -21,5 +22,9 @@ export async function execute(interaction: any) {
   }
 
   const lesson = topicList[Math.floor(Math.random() * topicList.length)];
-  await interaction.reply(`[${topic.toUpperCase()}] ${lesson}`);
+  await addXP(interaction.user.id, 10);
+
+  await interaction.reply(
+    `[*${topic.toUpperCase()}*]\n${lesson}\n\n+10 XP earned. Keep going!`
+  );
 }
