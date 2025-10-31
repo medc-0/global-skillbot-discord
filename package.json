@@ -1,15 +1,14 @@
 {
   "name": "skill-bot",
   "version": "1.0.0",
-  "description": "Skillbot for fun Discord servers",
+  "description": "SkillBot for fun Discord servers",
   "main": "index.js",
-  "scripts": {
-    "dev": "tsx src/index.ts"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "tsx src/index.ts"
+  },
   "dependencies": {
     "discord.js": "^14.24.1",
     "dotenv": "^17.2.3",

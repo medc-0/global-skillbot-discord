@@ -13,5 +13,21 @@
     "Neural networks learn patterns by adjusting weights through backpropagation.",
     "Data quality is more important than model complexity.",
     "Use embeddings to represent text numerically for ML tasks."
+  ],
+  "velikifeniks": [
+    {
+      "topic": "velikifeniks",
+      "content": "is a smart guy",
+      "createdBy": "1350479073729712139",
+      "createdAt": "2025-10-31T12:13:09.353Z"
+    }
+  ],
+  "omid": [
+    {
+      "topic": "omid",
+      "content": "omid has a dox file of himself (DOX Of Omed)",
+      "createdBy": "915693834829180989",
+      "createdAt": "2025-10-31T14:05:03.496Z"
+    }
   ]
 }

@@ -1,11 +1,11 @@
-import { SlashCommandBuilder } from "discord.js";
-import { readLessons } from "../utils/fileHandler.js";
+import { ChatInputCommandInteraction, SlashCommandBuilder } from "discord.js";
+import { readLessons } from "../utils/fileHandler";
 
 export const data = new SlashCommandBuilder()
   .setName("topics")
   .setDescription("List all available learning topics.");
 
-export async function execute(interaction: any) {
+export async function execute(interaction: ChatInputCommandInteraction) {
   const lessons = await readLessons();
   const topics = Object.keys(lessons);
 

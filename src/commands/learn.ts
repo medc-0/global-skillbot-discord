@@ -1,30 +1,29 @@
-import { SlashCommandBuilder } from "discord.js";
-import { readLessons } from "../utils/fileHandler.js";
-import { addXP } from "../utils/pointsManager.js";
+import { ChatInputCommandInteraction, SlashCommandBuilder } from "discord.js";
+import { readLessons } from "../utils/fileHandler";
+import { addXP } from "../utils/pointsManager";
 
 export const data = new SlashCommandBuilder()
   .setName("learn")
   .setDescription("Learn something about a specific topic.")
-  .addStringOption((option) =>
+  .addStringOption(option =>
     option.setName("topic").setDescription("Topic name").setRequired(true)
   );
 
-export async function execute(interaction: any) {
+export async function execute(interaction: ChatInputCommandInteraction) {
   const topic = interaction.options.getString("topic")?.toLowerCase();
   const lessons = await readLessons();
 
   const topicList = lessons[topic];
   if (!topicList) {
     await interaction.reply(
-      `I don't know anything about "${topic}" yet. You can teach me with /teach.`
+      `I don't know anything about "${topic}" yet. Use /teach to share knowledge.`
     );
     return;
   }
 
   const lesson = topicList[Math.floor(Math.random() * topicList.length)];
-  await addXP(interaction.user.id, 10);
+  await addXP(interaction.user.id, 10, "learn");
 
-  await interaction.reply(
-    `[*${topic.toUpperCase()}*]\n${lesson}\n\n+10 XP earned. Keep going!`
-  );
+  const content = typeof lesson === "string" ? lesson : lesson.content;
+  await interaction.reply(`[*${topic.toUpperCase()}*]\n${content}\n\n+10 XP earned! Keep learning.`);
 }
